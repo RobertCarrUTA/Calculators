@@ -1,5 +1,4 @@
 /*
-
     Program instructions/info:
 	    Compiled with GCC on Oracle VM Virtual Box (Linux Ubuntu (64-bit))
 	        
