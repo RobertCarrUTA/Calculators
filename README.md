@@ -4,7 +4,7 @@ This is a repository containing little calculator programs that I enjoy making. 
 # Compile Instructions
 These programs were compiled and run on an Oracle VM Virtual Box (Linux Ubuntu (64-bit). If you do not have access to a Linux operating system, you can probably find an online compiler to run these programs. I will leave that up to you. And I expect you to have some knowldge of how to use the terminal to do things such as cd Desktop or other basic commands. I also expect you to have enough background to be able to obtain the source code from this repo as you would like. If you do not know how to use a terminal or how to obtain the source code from this repo, that is no problem, there is an entire internet that is free to learn from!
 
-# For Programs Written in C
+## For Programs Written in C
 1. Download or copy the desired source code
 2. When the source code is successfully downloaded, place it into a directory of your choice
 3. Compile the program in the terminal while in the directory containing the source code:
