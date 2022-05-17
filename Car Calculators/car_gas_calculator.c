@@ -14,8 +14,6 @@
 		    How to run in the terminal:
 		        ./car_gas_calculator
 */
-
-
 #include <stdio.h>
 
 int main()
