@@ -28,10 +28,10 @@ int main()
     while(solve_another_equation == 1)
     {
         printf("\nPlease select the following options for an equation solver:");
-    
-        printf("\n\n\t1: ax^2 + bx + c = 0");
-        printf("\n\n\t2: a^2 + b^2 = c^2");
-        printf("\n\n\t3: n!");
+
+	printf("\n\n\t1: ax^2 + bx + c = 0"); // quadratic equation
+        printf("\n\n\t2: a^2 + b^2 = c^2"); // pythagorean theorem
+        printf("\n\n\t3: n!"); // factorial
     
         printf("\n\nPlease enter the number for the equation you want to solve: ");
         int selection;
@@ -63,6 +63,9 @@ int main()
 void quadratic_equation_solver()
 {
     int solve_another_quadratic = 1;
+
+    // While the user wants to solve a quadratic equation (solve_another_quadratic == 1) we need to repeat this loop,
+    // if at the end of the loop, the user is done solving quadratic equations (solve_another_quadratic == 0), we end the loop
     while(solve_another_quadratic == 1)
     {
         printf("\nPlease enter the values for this equation.");
@@ -81,6 +84,8 @@ void quadratic_equation_solver()
 
         int y = 0;
     
+	// To solve quadratics we need the discriminant, and values for a, b, and c
+	// Look here for an explanation on the process: https://www.mathsisfun.com/algebra/quadratic-equation.html
         double discriminant = (b * b) - (4 * a * c);
         double real_Number, imaginary_Number, first_Root, second_Root;
 
@@ -117,6 +122,8 @@ void pythagorean_theorem_equation_solver()
 {
     int solve_another_pythagorean_theorem = 1;
     
+    // While the user wants to solve a pythagorean theorem problem (solve_another_pythagorean_theorem == 1) we need to repeat this loop,
+    // if at the end of the loop, the user is done solving pythagorean theorem problems (solve_another_pythagorean_theorem == 0), we end the loop
     while(solve_another_pythagorean_theorem == 1)
     {
         printf("\nWhat side of the triangle do you want to solve for?");
@@ -128,7 +135,7 @@ void pythagorean_theorem_equation_solver()
     
         double A, B, C;
     
-        if(triangle_Side == 'A')
+	if(triangle_Side == 'A')
         {
             printf("\tEnter the sides of the triangle as they are shown:");
             printf("\n\tB: ");
@@ -137,8 +144,11 @@ void pythagorean_theorem_equation_solver()
             printf("\n\tC: ");
             scanf("%lf", &C);
         
+	    // This is the equation used to solve for the length of A
+	    // Look here for an explination: https://www.calculatorsoup.com/calculators/geometry-plane/pythagorean-theorem.php
             A = sqrt((C * C) - (B * B));
             
+	    // TODO: Improve this if/else with A = ... in the last else
             if(C < 1 || B < 1)
             {
                printf("A cannot be solved because B and C have to be a positive value.\n");
@@ -161,8 +171,11 @@ void pythagorean_theorem_equation_solver()
             printf("\n\tC: ");
             scanf("%lf", &C);
         
+	    // This is the equation used to solve for the length of B
+	    // Look here for an explination: https://www.calculatorsoup.com/calculators/geometry-plane/pythagorean-theorem.php
             B = sqrt((C * C) - (A * A));
             
+	    // TODO: Improve this if/else with A = ... in the last else
             if(C < 1 || A < 1)
             {
                printf("B cannot be solved because A and C have to be a positive value.\n");
@@ -184,9 +197,12 @@ void pythagorean_theorem_equation_solver()
         
             printf("\n\tB: ");
             scanf("%lf", &B);
-        
+
+	    // This is the equation used to solve for the length of C
+	    // Look here for an explination: https://www.calculatorsoup.com/calculators/geometry-plane/pythagorean-theorem.php
             C = (A * A) + (B * B);
             
+	    // TODO: Move this as a check before C is calculated, don't do the calculation if it is not legal
             if(A < 1 || B < 1)
             {
                 printf("C cannot be solved because A and B need to be positive vales.\n");
@@ -213,7 +229,7 @@ void factorial_solver()
         int factorial;
         scanf("%d", &factorial);
         
-        unsigned long long factorial_answer = 1;
+        unsigned long long factorial_answer = 1; // Factorials can get huge
         for(int i = 1; i <= factorial; i++)
         {
             factorial_answer *= i;
