@@ -16,7 +16,7 @@ int main()
 	// As long as the user wants to continue esitmating loans, we continue this loop
 	while(estimate_another_loan == 1)
 	{
-    	printf("\nPlease enter the information as it is shown to you.\n");
+        printf("\nPlease enter the information as it is shown to you.\n");
 
     	printf("\nHow much is the loan? ");
     	double loanAmount;
