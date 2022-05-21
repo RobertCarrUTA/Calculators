@@ -16,7 +16,7 @@ int main()
 	// As long as the user wants to continue esitmating loans, we continue this loop
 	while(estimate_another_loan == 1)
 	{
-        printf("\nPlease enter the information as it is shown to you.\n");
+    	printf("\nPlease enter the information as it is shown to you.\n");
 
     	printf("\nHow much is the loan? ");
     	double loanAmount;
@@ -36,13 +36,13 @@ int main()
     	// We need to make a value for the payment period
     	double paymentPeriods = paymentYears * 12; // They pay the loan every month
 
-	    //----------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------
 	    // Loan type used: Amortization
         // Link to Amortization loan interest calculation: https://www.vertex42.com/ExcelArticles/amortization-calculation.html
         //
 	    // For this type of loan calculation, we need to add a way to raise something
         // to a power for the MonthlyPayment equation. I did it this way so that monthlyPayment would look more clean.
-        // It takes ( 1 + InterestRate) and raises it to the power of PaymentPeriods.
+        // temp takes ( 1 + InterestRate) and raises it to the power of PaymentPeriods.
     	double temp = pow((1 + interestRate), paymentPeriods);
     	double monthlyPayment = loanAmount * ((interestRate * temp) / (temp - 1));
 
@@ -71,5 +71,6 @@ int main()
         	estimate_another_loan = 0;
     	}
 	}
+
 	return 0;
 }
