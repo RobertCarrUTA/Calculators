@@ -36,10 +36,14 @@ int main()
     	// We need to make a value for the payment period
     	double paymentPeriods = paymentYears * 12; // They pay the loan every month
 
-    	double temp = pow((1 + interestRate), paymentPeriods);
-
-        // Loan type used: Amortization
+	    //----------------------------------------------------------------------------------
+	    // Loan type used: Amortization
         // Link to Amortization loan interest calculation: https://www.vertex42.com/ExcelArticles/amortization-calculation.html
+        //
+	    // For this type of loan calculation, we need to add a way to raise something
+        // to a power for the MonthlyPayment equation. I did it this way so that monthlyPayment would look more clean.
+        // It takes ( 1 + InterestRate) and raises it to the power of PaymentPeriods.
+    	double temp = pow((1 + interestRate), paymentPeriods);
     	double monthlyPayment = loanAmount * ((interestRate * temp) / (temp - 1));
 
     	double finalCost = monthlyPayment * paymentPeriods;
@@ -67,6 +71,5 @@ int main()
         	estimate_another_loan = 0;
     	}
 	}
-
 	return 0;
 }
